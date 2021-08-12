@@ -1,9 +1,16 @@
 
+<!-- This section is for entering the element -->
   <div class= "container">
     <label>Add an item:</label>
     <input #value class="add-item" type="text" data-test="assembly-add-item"
            (keydown.enter)="onAddItem($event);">
   </div>
+
+  <!-- This section contains the 4 stages as specified in the problem statement
+  We run 2 ngFor loops, 1st 1 to iterate over the stages and 2nd one to iterate over
+  the  arrays of each stages so that we can perform the right and left click functionality
+  using onRightClickFunctionality() and onLeftClickFunctionality() respectively and add/remove
+  the items as buttons inside the respective stages -->
   <div class="stages">
     <div class="stage-item" data-test="assembly-stage" *ngFor="let stage of stages; let i = index">
       {{stage}}
