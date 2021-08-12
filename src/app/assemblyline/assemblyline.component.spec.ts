@@ -37,12 +37,7 @@ describe('AssemblyLineComponent', () => {
     items.forEach(e => {
       addElem.nativeElement.value = e;
       addElem.nativeElement.dispatchEvent(new Event('input'));
-      const eventObj = {
-        target: {
-          value: e
-        }
-      };
-      addElem.triggerEventHandler('keydown.enter', eventObj);
+      addElem.triggerEventHandler('keydown.enter', {target: {value: e}});
     });
     fixture.detectChanges();
   };
